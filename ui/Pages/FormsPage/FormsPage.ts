@@ -1,4 +1,4 @@
-import { Page, expect, TestInfo } from "@playwright/test"
+import { Page } from "@playwright/test"
 import { locators } from "./FormsPageLocators";
 import { CommonPage } from "../../base/common/CommonPage";
 import { CommonScenario } from "../../base/common/CommonScenario";
@@ -18,7 +18,6 @@ export class FormsPage extends CommonPage {
         currentAddress: string, stateAndCity: string)
         {
             var StateAndCity_array = stateAndCity.split(',')
-
 
             await this.page.locator(locators.FirstName).fill(firstName);
             await this.page.locator(locators.LastName).fill(lastName);
@@ -47,11 +46,10 @@ export class FormsPage extends CommonPage {
 
             await this.page.evaluate(() => {
                 document.body.style.transform = 'scale(0.5)'
-              })
+              })//some elements are missing when zoom out- potintial bug
 
            await this.pickState(StateAndCity_array[0]);
            await this.pickCity("Delhi");
-
            await this.uploadPicture();
         }
 
@@ -80,6 +78,6 @@ export class FormsPage extends CommonPage {
 
         async uploadPicture()
         {
-            await this.page.setInputFiles(locators.Picture, 'tests/DwightSC.jpg')
+            await this.page.setInputFiles(locators.Picture, 'Pages/FormsPage/files/DwightSC.jpg')
         }
 }

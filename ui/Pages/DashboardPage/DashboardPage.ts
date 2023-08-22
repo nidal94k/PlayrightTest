@@ -1,4 +1,4 @@
-import { Page, TestInfo } from "@playwright/test";
+import { Page} from "@playwright/test";
 import { locators } from "../DashboardPage/DashboardPageLocators";
 import { CommonPage } from "../../base/common/CommonPage";
 import { CommonScenario } from "../../base/common/CommonScenario";

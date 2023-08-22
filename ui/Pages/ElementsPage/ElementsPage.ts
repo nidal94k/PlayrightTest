@@ -1,4 +1,4 @@
-import { Page, expect, TestInfo } from "@playwright/test"
+import { Page } from "@playwright/test"
 import { locators } from "./ElementsPageLocators";
 import { CommonPage } from "../../base/common/CommonPage";
 import { CommonScenario } from "../../base/common/CommonScenario";
@@ -26,7 +26,7 @@ export class ElementsPage extends CommonPage {
         await this.page.locator(locators.AgeInput).fill(age.toString());
         await this.page.locator(locators.EmailInput).fill(email);
         await this.page.locator(locators.SalaryInput).fill(salary.toString());
-        await this.page.locator(locators.DepartmentInput).fill(firstName);
+        await this.page.locator(locators.DepartmentInput).fill(department);
     }
 
     async submitWebTables()
@@ -46,6 +46,7 @@ export class ElementsPage extends CommonPage {
             }
         }
         await this.page.locator(locators.SearchInput).clear();
+        
         return userFound;
     }
 
@@ -53,6 +54,7 @@ export class ElementsPage extends CommonPage {
     {
         var emailLocator = locators.FindEmail.replace("row", row.toString());
         let emailValue = this.page.locator(emailLocator).innerText();
+
         return emailValue;
     }
 
@@ -78,7 +80,7 @@ export class ElementsPage extends CommonPage {
         if (email == null)
         return "";
     
-        let returnedValue;
+        let returnedValue: any;
         await this.page.locator(locators.SearchInput).type(email);
         for (const row of await this.page.locator(locators.Rows).all()) {
             const emailOfRow = await row.locator(".rt-td:nth-child(4)").textContent();
@@ -123,6 +125,7 @@ export class ElementsPage extends CommonPage {
         let src = await this.page.locator(locators.BrokenImage).getAttribute("src");
         if(src!=null)
             return src
+
         return "";
     }
 }
