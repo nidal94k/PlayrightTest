@@ -100,7 +100,7 @@ npx playwright test
 
    |- playwright-report # html report from last run
 
-   |- test-results # screenshot of the last run
+   |- test-results # screenshots of the last run
 ```
 
 
@@ -121,7 +121,7 @@ npx playwright show-report
 ```
 
 
-## BUGS -
+## BUGS
 
    * *Summary* : Subject `Playwright Assignment` can't be added to the form.
    
