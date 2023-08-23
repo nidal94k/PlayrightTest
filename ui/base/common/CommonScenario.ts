@@ -1,4 +1,4 @@
-import { test, expect, Page, TestInfo } from "@playwright/test";
+import { Page, TestInfo } from "@playwright/test";
 export class CommonScenario {
     private myMap = new Map<string, string>();
     constructor(public page: Page, public testinfo: TestInfo) {
