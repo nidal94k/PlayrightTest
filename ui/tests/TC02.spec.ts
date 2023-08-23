@@ -2,6 +2,7 @@ import test, { expect } from "../base/Fixtures/BaseTest"
 import { testData } from "./testData";
 import { locators } from "../pages/elementsPage/elementsPageLocators";
 
+test.describe.configure({ mode: 'serial' });
 test.describe('TC02', () => {
 
   test("Verify broken image", async ({ page, dashboardPage, elementsPage }, testinfo) => {

@@ -2,6 +2,7 @@ import test, { expect } from "../base/Fixtures/BaseTest"
 import { testData } from "./testData";
 import { locators } from "../pages/interactionsPage/interactionsPageLocators";
 
+test.describe.configure({ mode: 'serial' });
 test.describe('TC06', () => {
 
   test("Verify user can drag and drop", async ({ page, dashboardPage, interactionsPage }, testinfo) => {

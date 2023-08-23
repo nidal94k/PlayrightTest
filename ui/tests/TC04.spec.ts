@@ -2,6 +2,7 @@ import test, { expect } from "../base/Fixtures/BaseTest"
 import { testData } from "./testData";
 import { locators } from "../pages/widgetsPage/widgetsPageLocators";
 
+test.describe.configure({ mode: 'serial' });
 test.describe('TC04', () => {
 
   test("Verify the progress bar", async ({ page, dashboardPage, widgetsPage }, testinfo) => {

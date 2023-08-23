@@ -2,6 +2,7 @@ import test, { expect } from "../base/Fixtures/BaseTest"
 import { testData } from "./testData";
 import { locators } from "../pages/widgetsPage/widgetsPageLocators";
 
+test.describe.configure({ mode: 'serial' });
 test.describe('TC05', () => {
 
   test("Verify the tooltip", async ({ page, dashboardPage, widgetsPage }, testinfo) => {
