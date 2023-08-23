@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import { testData } from "../API/TestData"
-import { UserAPI } from "../API/User/User";
-import { TokenAPI } from '../API/Token/Token';
-import { BooksAPI } from '../API/Books/Books';
+import { testData } from "./testData"
+import { UserAPI } from "../api/users/users";
+import { TokenAPI } from '../api/tokens/tokens';
+import { BooksAPI } from '../api/books/books';
 
 test.describe.configure({ mode: 'serial' });
 test.describe('TC08 -- Happy flow', () => {

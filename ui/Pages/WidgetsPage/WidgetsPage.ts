@@ -1,7 +1,7 @@
 import { Page, expect, TestInfo } from "@playwright/test"
-import { locators } from "./WidgetsPageLocators";
-import { CommonPage } from "../../base/common/CommonPage";
-import { CommonScenario } from "../../base/common/CommonScenario";
+import { locators } from "./widgetsPageLocators";
+import { CommonPage } from "../../base/common/commonPage";
+import { CommonScenario } from "../../base/common/commonScenario";
 
 export class WidgetsPage extends CommonPage {
     constructor(public page: Page, readonly scenario: CommonScenario) {

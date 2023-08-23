@@ -1,5 +1,5 @@
-import {test, expect, request, APIRequestContext} from '@playwright/test';
-import { testData } from "../TestData";
+import {test, expect, APIRequestContext} from '@playwright/test';
+import { testData } from "../../e2e/testData";
 
 interface Isbn {
     isbn: string;
@@ -12,11 +12,6 @@ interface OKAddBodyObj {
 
 interface OKAddBookResponseObj {
     books: Array<Isbn>;
-}
-
- interface BADRemoveBookResponseObj {
-    code: string;
-    message: string;
 }
 
 export class BooksAPI{
@@ -84,8 +79,6 @@ export class BooksAPI{
         await test.step(`the removing-book status is ${status}`, async() => {
             expect(statusResponse).toBe(status);
         })
-
-        let obj: BADRemoveBookResponseObj = body;
 
         await test.step('the removing-books resonse body matches the expected body', async() => {
             if(status == 400)

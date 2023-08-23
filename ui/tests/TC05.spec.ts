@@ -1,6 +1,6 @@
 import test, { expect } from "../base/Fixtures/BaseTest"
-import { testData } from "./TestData";
-import { locators } from "../Pages/WidgetsPage/WidgetsPageLocators";
+import { testData } from "./testData";
+import { locators } from "../pages/widgetsPage/widgetsPageLocators";
 
 test.describe('TC05', () => {
 

@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { CommonScenario } from "./CommonScenario";
+import { CommonScenario } from "./commonScenario";
 
 
 export class CommonPage {

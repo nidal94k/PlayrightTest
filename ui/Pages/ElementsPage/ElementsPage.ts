@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test"
-import { locators } from "./ElementsPageLocators";
-import { CommonPage } from "../../base/common/CommonPage";
-import { CommonScenario } from "../../base/common/CommonScenario";
+import { locators } from "./elementsPageLocators";
+import { CommonPage } from "../../base/common/commonPage";
+import { CommonScenario } from "../../base/common/commonScenario";
 
 export class ElementsPage extends CommonPage {
     constructor(public page: Page, readonly scenario: CommonScenario) {

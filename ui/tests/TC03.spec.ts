@@ -1,6 +1,6 @@
 import test, { expect } from "../base/Fixtures/BaseTest"
-import { testData } from "./TestData";
-import { locators } from "../Pages/FormsPage/FormsPageLocators";
+import { testData } from "./testData";
+import { locators } from "../pages/formsPage/formsPageLocators";
 
 test.describe.configure({ mode: 'serial' });
 test.describe('TC03', () => {

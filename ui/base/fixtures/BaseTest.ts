@@ -1,11 +1,11 @@
-import { DashboardPage } from '../../Pages/DashboardPage/DashboardPage';
-import { ElementsPage } from '../../Pages/ElementsPage/ElementsPage';
-import { FormsPage } from '../../Pages/FormsPage/FormsPage';
-import { InteractionsPage } from '../../Pages/InteractionsPage/InteractionsPage';
-import { WidgetsPage } from '../../Pages/WidgetsPage/WidgetsPage';
+import { DashboardPage } from '../../pages/dashboardPage/dashboardPage';
+import { ElementsPage } from '../../pages/elementsPage/elementsPage';
+import { FormsPage } from '../../pages/formsPage/formsPage';
+import { InteractionsPage } from '../../pages/interactionsPage/interactionsPage';
+import { WidgetsPage } from '../../pages/widgetsPage/widgetsPage';
 import { test as baseTest } from "@playwright/test";
-import { CommonScenario } from "../common/CommonScenario";
-import { CommonPage } from "../common/CommonPage";
+import { CommonScenario } from "../common/commonScenario";
+import { CommonPage } from "../common/commonPage";
 
 // declaring the objects type for autocompletion 
 interface PageObjects {

@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import { testData } from "../API/TestData"
-import { UserAPI } from "../API/User/User";
-import { TokenAPI } from '../API/Token/Token';
-import { BooksAPI } from '../API/Books/Books';
+import { testData } from "./testData"
+import { UserAPI } from "../api/users/users";
+import { TokenAPI } from '../api/tokens/tokens';
+import { BooksAPI } from '../api/books/books';
 
 test.describe.configure({ mode: 'serial' });
 test.describe('TC09 -- UnHappy flow', () => {
@@ -38,11 +38,11 @@ let removeBookPost = {
   test("Creation of user account  BUT pass an empty password", async ({ request }) => {
     const user = new UserAPI(request);
     
-    await user.postUser(userPost, 400); 
+    await user.postUser(userPost, 400); // pass an empty password
 
     userPost['password'] = '123!!asdAA';
 
-    await user.postUser(userPost, 201);   
+    await user.postUser(userPost, 201); // pass a valid password
     });
 
   test("Generate a token", async ({ request }) => {
@@ -56,11 +56,11 @@ let removeBookPost = {
     let tempUserId = testData.UserId;
     testData.UserId = "123";
 
-    await user.getUser(userPost, 401);
+    await user.getUser(userPost, 401); // pass the wrong userId
 
     testData.UserId = tempUserId;
 
-    await user.getUser(userPost, 200); 
+    await user.getUser(userPost, 200); // pass the right userId
     });
 
   test("Add a list of books", async ({ request }) => {
@@ -78,11 +78,11 @@ let removeBookPost = {
 
     removeBookPost['userId'] = "123";
 
-    await book.removeBook(removeBookPost, 401); 
+    await book.removeBook(removeBookPost, 401); // pass a wrong userId
 
     removeBookPost['userId'] = testData.UserId;
 
-    await book.removeBook(removeBookPost, 204); 
+    await book.removeBook(removeBookPost, 204); // pass the right userId
     
     await book.removeBook(removeBookPost, 400); //verify can't remove the book again
     });
